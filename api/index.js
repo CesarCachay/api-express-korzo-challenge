@@ -26,7 +26,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Express API!");
+  res.send("Welcome to the Express API with Stocks and WorkOS API!");
 });
 
 module.exports = app;
