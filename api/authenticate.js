@@ -15,7 +15,11 @@ router.post("/", async (req, res) => {
     });
 
     console.log("authResponse", authResponse);
-    res.json({ token: authResponse.token, user: authResponse.user });
+    res.status(200).json({
+      accessToken: authResponse.accessToken,
+      refreshToken: authResponse.refreshToken,
+      user: authResponse.user,
+    });
   } catch (error) {
     console.error("Error auth user:", error.response?.data || error.message);
     res.status(401).json({ message: "Invalid credentials" });
